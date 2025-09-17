@@ -7,7 +7,8 @@ import { authGuard } from './transactions/AuthGuard';
 // import { AuthGuard } from '@angular/fire/auth-guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  // { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {path: '', component: Login},
   { path: 'login', component: Login },
   { path: 'transactions', component: Transactions, 
     canActivate: [authGuard],
