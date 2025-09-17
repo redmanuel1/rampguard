@@ -1,0 +1,64 @@
+
+<div class="transactions-layout">
+  <!-- Toggle Button (visible only on mobile) -->
+   
+    <button class="menu-toggle hamburger" type="button" (click)="toggleSidenav()">
+         <img src="images/menu.png" alt="menu" class="img-fluid" style="width: 40px; height: 40px;">
+    </button>
+ 
+
+  <!-- Backdrop -->
+  <div *ngIf="isSidenavOpen" class="sidenav-backdrop" (click)="toggleSidenav()"></div>
+
+  <!-- Sidebar -->
+  <nav class="sidenav" [class.open]="isSidenavOpen">
+    <div class="brand text-center">RAMPGUARD
+        <hr>
+    </div>
+    
+  
+    <ul class="nav-list">
+      <li>
+        <a routerLink="dashboard" routerLinkActive="active">
+          <span class="icon">📊</span><span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="activities" routerLinkActive="active">
+          <span class="icon">📋</span><span>Activities</span>
+        </a>
+      </li>
+      <!-- <li>
+        <a routerLink="billing" routerLinkActive="active">
+          <span class="icon">💳</span><span>Billing</span>
+        </a>
+      </li> -->
+    </ul>
+   
+   
+    
+
+    <div class="sidenav-footer">
+      <!-- <p>Need help?</p> -->
+      <!-- <button class="doc-btn">Documentation</button> -->
+      <button class="pro-btn" (click)="logout()">Log out</button>
+    </div>
+  </nav>
+
+  <!-- Main content area -->
+  <main class="main-content p-3 w-100 h-100">
+    <div class="d-flex flex-row justify-content-between py-3">
+    <h3 class="text-white">{{ pageTitle }}</h3>
+    <!-- <img 
+        class="img-fluid" 
+        src="images/logo.png" 
+        alt="Logo" 
+        style="max-width: 200px; width: 50%; " 
+    /> -->
+    </div>
+    <!-- <div class="content-card w-100"> -->
+      <router-outlet>
+      </router-outlet>
+    <!-- </div> -->
+  </main>
+</div>

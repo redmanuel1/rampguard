@@ -1,0 +1,42 @@
+<div class="gradient-bg">
+<div class="container py-5 text-center " >
+    <section>
+        <h1 class="py-2 text-center"><b>RAMPGUARD</b></h1>
+
+        <div class="text-center pb-2">
+    <img 
+        class="img-fluid" 
+        src="images/logo.png" 
+        alt="Logo" 
+        style="max-width: 200px; width: 50%;" 
+    />
+    </div>
+
+    </section>
+
+   <section class="box-roundrect mx-auto mt-4">
+        <div class="p-4">
+            <div class="mb-3 text-start">
+                <label for="login" class="form-label"><b>Username</b></label>
+                <input type="text" [(ngModel)]="username" class="form-control text-center" id="login" placeholder="Username">
+            </div>
+            <div class="mb-3 text-start">
+            <label for="inputPassword" class="form-label"><b>Password</b></label>
+            <input type="password" [(ngModel)]="password" class="form-control text-center" id="inputPassword" placeholder="Password">
+            </div>
+            <div class="text-center">
+            <button type="button" class="btn btn-primary" (click)="onLogin()">Login</button>
+            <p class="text-info pt-2" style="font-size: 12px;">Forgot Password?</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <p class="pt-4">Terms & Condition</p>
+        <p class="">Privacy Policy</p>
+
+    </section>
+  
+</div>
+</div>

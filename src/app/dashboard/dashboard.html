@@ -1,0 +1,76 @@
+<app-loadingmask [visible]="loading"></app-loadingmask>
+
+<div class="d-flex flex-row gap-3">
+  <!-- <div class="stats-card">
+    <p>Count</p>
+    <div class="count-value">{{ getCount() }}</div>
+  </div> -->
+  <div class="card">
+    <!-- <div class="card-title">Count</div> -->
+    <div class="card-body " style="min-width: 90px;">
+      <div class="fw-medium text-sm mb-0 text-uppercase ">
+        Count
+      </div>
+      <div class="fw-bolder fs-5 text-center text-primary">
+      {{getCount()}}
+       
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <!-- <div class="card-title">Count</div> -->
+    <div class="card-body">
+      <div class="fw-medium text-sm mb-0 text-uppercase">
+        Latest login time
+      </div>
+      <div class="fw-bolder fs-5 text-uppercase text-center text-primary">
+     {{ getLatestLoginTime() | date:'MM/dd/yyyy hh:mm a' }}
+      </div>
+    </div>
+  </div>
+  <!-- <div class="stats-card"> {{ getLatestLoginTime() | date:'MM/dd/yyyy hh:mm a' }}</div> -->
+
+</div>
+
+<div class="p-5 dashboard-card w-100 mt-5">
+
+
+  <!-- Search box -->
+   <div class="d-flex justify-content-end mb-3">
+        <div class="col-12 col-md-4 col-lg-3">
+            <input 
+            type="text" 
+            class="form-control " 
+            placeholder="Search."
+            [(ngModel)]="searchTerm"
+            />
+        </div>
+  </div>
+
+  <!-- Table -->
+  <div  style="max-height: 60vh; overflow-y: auto; ; display: block;">
+    <table class="table table-striped align-middle">
+      <thead class="table-primary " style="position: sticky; top: 0; z-index: 1;">
+        <tr>
+          <th>Name</th>
+          <th>ID&nbsp;Number</th>
+          <th>Purpose</th>
+          <th>Companions</th>
+          <th>Login</th>
+          <th>Logout</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let activity of filteredActivities()">
+          <td class="">{{ activity.firstName }} {{ activity.lastName }}</td>
+          <td class="">{{ activity.idNo }}</td>
+          <td class="">{{ activity.purpose }}</td>
+          <td class="">{{ activity.companions }}</td>
+          <td class="">{{ activity.login | date:'MM/dd/yyyy hh:mm a'  }}</td>
+          <td class="">{{ activity.logout| date:'MM/dd/yyyy hh:mm a' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

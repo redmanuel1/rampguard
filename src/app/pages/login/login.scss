@@ -1,0 +1,22 @@
+.box-roundrect {
+//   background-color: rgb(195, 189, 189);
+    border:solid 1px black ;
+  border-radius:  10px;
+  display: inline-block; /* makes the box shrink to fit content */
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  width: fit-content; 
+  background-color: #fff;
+//   min-width: 350px;
+}
+
+
+
+.gradient-bg {
+  min-height: 100vh; /* full screen */
+  background: linear-gradient(to bottom right, #007bff, #00c6ff); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
